@@ -1,0 +1,124 @@
+﻿@model Yimi.PublishManage.Core.IPagedList<Yimi.PublishManage.Core.Domain.SqlPublishOrder>
+@using Yimi.PublishManage.Framework.UI.Paging
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Sql审核</h2>
+
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+               
+                <!-- start project list -->
+                <table class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <td>Environment</td>
+                            <th>Publishtime</th>
+                            
+                            <th>Db ProviderName</th>
+                            <th>#Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+
+                                <td>
+                                    <a target="_blank" href="/SqlPublish/detail?id=@item.Id">@item.Name</a>
+                                </td>
+                                <td>@item.SqlPublishEnvironment.ToString()</td>
+                                <td>@item.Publishtime</td>
+
+                                <td>@item.YimiSqlProvider.Name</td>
+
+                                <td>
+                                   
+                                    <button class="btn btn-primary btn-xs ok" data-toggle="modal" data-target=".bs-example-modal-lg" modelid="@item.Id" > 审核成功 </button>
+                                    <button class="btn btn-danger btn-xs fail" modelid="@item.Id"> 审核失败 </button>
+                                  
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+                <!-- end project list -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("page", ViewBag.PageInfo as PageModel)
+@Html.Partial("ConfirmModal")
+@section Scripts{
+    <script>
+    $(function () {
+
+        $(".confirm").click(function () {
+            var id = $(".ok").attr("modelid");
+            var data = { id: id ,statues:0 };
+            $.ajax({
+                url: "/SqlPublish/updatestatues?id=" + id +"&statues=0",
+                type: 'POST',
+                dataType: 'json',
+                data: JSON.stringify(data),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    if (data.IsSuccess)
+                        window.location.reload();
+                    else {
+
+                    }
+                }
+            });
+        })
+
+        $(".fail").click(function () {
+            var id = $(this).attr("modelid");
+            var data = { id: id, statues: 1 };
+            $.ajax({
+                url: "/SqlPublish/updatestatues?id=" + id + "&statues=1",
+                type: 'POST',
+                dataType: 'json',
+                data: JSON.stringify(data),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    if (data.IsSuccess)
+                        window.location.reload();
+                    else {
+
+                    }
+                }
+            });
+        })
+
+    })
+
+    </script>
+}

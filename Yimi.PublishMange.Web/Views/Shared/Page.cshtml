@@ -1,0 +1,60 @@
+﻿@model Yimi.PublishManage.Framework.UI.Paging.PageModel
+
+@if (Model != null)
+{
+   
+    <div class="row">
+        <div class="col-sm-5">
+
+        </div>
+        <div class="col-sm-7">
+            <div class="dataTables_paginate paging_simple_numbers" id="datatable-responsive_paginate">
+                <ul class="pagination">
+                   
+                        @if (Model.PageIndex > 0 && Model.PageCount != 1)
+                        {
+                            <li class="paginate_button previous" id="datatable-responsive_previous">
+                                <a href="@Model.GenerateUrl(Model.PageIndex-1)" aria-controls="datatable-responsive" data-dt-idx="0" tabindex="0">Previous</a>
+                            </li>
+
+                        }
+                        else
+                        {
+                         <li class="paginate_button previous disabled" id="datatable-responsive_previous">
+
+                             <a href="#" aria-controls="datatable-responsive" data-dt-idx="0" tabindex="0">Previous</a>
+                          </li>
+                        }
+
+
+                    @for (int i = 1; i <= Model.PageCount; i++)
+                     {
+                        if (Model.PageIndex == i-1)
+                        {
+                           <li class="paginate_button active"><a href="@Model.GenerateUrl(i-1)" aria-controls="datatable-responsive" data-dt-idx="@i" tabindex="@i">@i</a></li>
+                        }
+                        else
+                        {
+
+                            <li class="paginate_button"><a href="@Model.GenerateUrl(i-1)" aria-controls="datatable-responsive" data-dt-idx="@i" tabindex="@i">@i</a></li>
+                        }
+
+
+                    }
+                    @if (Model.PageIndex < Model.PageCount - 1)
+                    {
+
+                        <li class="paginate_button next" id="datatable-responsive_next"><a href="@Model.GenerateUrl(Model.PageIndex+1)" aria-controls="datatable-responsive" data-dt-idx="@Model.PageCount" tabindex="@Model.PageCount">Next</a></li>
+                    }
+                    else
+                    {
+                        <li class="paginate_button next disabled" id="datatable-responsive_next"><a href="#" aria-controls="datatable-responsive" data-dt-idx="@Model.PageCount" tabindex="@Model.PageCount">Next</a></li>
+
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+}

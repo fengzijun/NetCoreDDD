@@ -1,0 +1,163 @@
+﻿@model Yimi.PublishManage.Web.Model.QuoteModel
+@{
+    Layout = "homelayout";
+}
+
+
+
+<div class="about-main">
+    <div class="container marketing">
+
+        <!-- START THE FEATURETTES -->
+        <div class="row title-div">
+            <div class="col-md-9 col-sm-7 col-xs-5">
+                <div class="about-title lead"><h4>You can contract us at sales@startlink-xdz.com or upload your files below to get a quotation.</h4>  </div>
+            </div>
+            <div class="col-md-3 col-sm-7 col-xs-7">
+                <ol class="breadcrumb">
+                    <li><a href="/home/index">Home</a></li>
+                    <li class="active">Online_Quotes</li>
+                </ol>
+            </div>
+        </div>
+        <hr class="featurette-divider about-hr">
+
+
+        @using (Html.BeginForm("UploadQuote", "Home", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Company:</label>
+                <div class="col-sm-7">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.Company, new { @class = "form-control" })
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Name:</label>
+                <div class="col-sm-7">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.Name, new { @class = "form-control" })
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email:</label>
+                <div class="col-sm-7">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.Email, new { @class = "form-control" })
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Phone:</label>
+                <div class="col-sm-7">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.Phone, new { @class = "form-control" })
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Part No:</label>
+                <div class="col-sm-7">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.PartNo, new { @class = "form-control" })
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Quantity:</label>
+                <div class="col-sm-7">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.Quantity, new { @class = "form-control" })
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Lead Time:</label>
+                <div class="col-sm-7">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.Leadtime, new { @class = "form-control" })
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Upload file:</label>
+                <div class="col-sm-7">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    <input type="file" name="uploadfile" />
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Type of Quote:</label>
+                <div class="col-sm-7">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.DropDownListFor(s => s.Type, ViewBag.ProjectList as List<SelectListItem>, new { @class = "form-control" })
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Captcha:</label>
+                <div class="col-sm-7">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.Code, new { @class = "form-control" })
+
+                </div>
+                <span><img src="/home/GetVerifyCode" /></span>
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Comment:</label>
+                <div class="col-sm-7">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextAreaFor(s => s.Commnet, new { @class = "form-control" })
+                </div>
+
+
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-7">
+
+                    <input value="submit" type="submit" class="btn btn-primary" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                <div class="col-sm-4" style="color:red;">
+                   @Html.ValidationSummary()
+                </div>
+            </div>
+
+
+        }
+
+        <!-- /END THE FEATURETTES -->
+
+
+
+    </div><!-- /.container -->
+</div>

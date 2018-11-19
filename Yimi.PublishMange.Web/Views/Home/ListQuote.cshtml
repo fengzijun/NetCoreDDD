@@ -1,0 +1,72 @@
+﻿@model Yimi.PublishManage.Core.IPagedList<Yimi.PublishManage.Core.Domain.Quote>
+@{
+    ViewData["Title"] = "ListQuote";
+    Layout = "homelayout";
+}
+
+<div class="about-main">
+    <div class="container marketing">
+
+        <!-- START THE FEATURETTES -->
+        <div class="row title-div">
+            <div class="col-md-5 col-sm-5 col-xs-5">
+                <div class="about-title"> <h4>Quote List</h4>  </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-7">
+                <ol class="breadcrumb">
+                    <li><a href="/home/index">Home</a></li>
+                    <li class="active">Quote List</li>
+                </ol>
+            </div>
+        </div>
+        <hr class="featurette-divider about-hr">
+
+        <div class="row featurette">
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>PartNo</th>
+                        <th>Quantity</th>
+                        <th>Leadtime</th>
+                        <th>Type</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.Company</td>
+                        <td>@item.Name</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>
+                        <td>@item.PartNo</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Leadtime</td>
+                        <td>@item.Type</td>
+
+                        <td><a target="_blank" href="~/upload/@item.Uploadfile">Download</a></td>
+                    </tr>
+                            }
+                       
+                    </tbody>
+                </table>
+        </div>
+        <div class="row featurette">
+            @Html.Partial("PageList", ViewBag.PageInfo as Yimi.PublishManage.Framework.UI.Paging.PageModel)
+        </div>
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+
+
+    </div><!-- /.container -->
+</div>
+

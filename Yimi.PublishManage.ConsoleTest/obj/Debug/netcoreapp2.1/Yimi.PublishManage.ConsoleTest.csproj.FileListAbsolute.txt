@@ -1,0 +1,10 @@
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.ConsoleTest\bin\Debug\netcoreapp2.1\Yimi.PublishManage.ConsoleTest.deps.json
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.ConsoleTest\bin\Debug\netcoreapp2.1\Yimi.PublishManage.ConsoleTest.runtimeconfig.json
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.ConsoleTest\bin\Debug\netcoreapp2.1\Yimi.PublishManage.ConsoleTest.runtimeconfig.dev.json
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.ConsoleTest\bin\Debug\netcoreapp2.1\Yimi.PublishManage.ConsoleTest.dll
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.ConsoleTest\obj\Debug\netcoreapp2.1\Yimi.PublishManage.ConsoleTest.csproj.CoreCompileInputs.cache
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.ConsoleTest\obj\Debug\netcoreapp2.1\Yimi.PublishManage.ConsoleTest.AssemblyInfoInputs.cache
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.ConsoleTest\obj\Debug\netcoreapp2.1\Yimi.PublishManage.ConsoleTest.AssemblyInfo.cs
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.ConsoleTest\bin\Debug\netcoreapp2.1\Yimi.PublishManage.ConsoleTest.pdb
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.ConsoleTest\obj\Debug\netcoreapp2.1\Yimi.PublishManage.ConsoleTest.dll
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.ConsoleTest\obj\Debug\netcoreapp2.1\Yimi.PublishManage.ConsoleTest.pdb

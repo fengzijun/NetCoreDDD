@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Yimi.PublishManage.Framework</RootNamespace>
+    <AssemblyName>Yimi.PublishManage.Framework</AssemblyName>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Mvc\Filters\Authorizefilter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BundlerMinifier.Core" Version="2.2.301" />
+    <PackageReference Include="FluentScheduler" Version="5.3.0" />
+    <PackageReference Include="FluentValidation" Version="7.6.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="7.6.0" />
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.0.0" />
+    <PackageReference Include="System.IO.FileSystem.AccessControl" Version="4.5.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.8.9" />
+    <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Security.AccessControl" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Yimi.PublishMange.Core\Yimi.PublishManage.Core.csproj" />
+    <ProjectReference Include="..\Yimi.PublishMange.Data\Yimi.PublishManage.Data.csproj" />
+    <ProjectReference Include="..\Yimi.PublishMange.Service\Yimi.PublishManage.Service.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.CreateDomainUser\bin\Release\netcoreapp2.1\Yimi.PublishManage.CreateDomainUser.deps.json
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.CreateDomainUser\bin\Release\netcoreapp2.1\Yimi.PublishManage.CreateDomainUser.runtimeconfig.json
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.CreateDomainUser\bin\Release\netcoreapp2.1\Yimi.PublishManage.CreateDomainUser.runtimeconfig.dev.json
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.CreateDomainUser\bin\Release\netcoreapp2.1\Yimi.PublishManage.CreateDomainUser.dll
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.CreateDomainUser\bin\Release\netcoreapp2.1\Yimi.PublishManage.CreateDomainUser.pdb
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.CreateDomainUser\obj\Release\netcoreapp2.1\Yimi.PublishManage.CreateDomainUser.csprojAssemblyReference.cache
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.CreateDomainUser\obj\Release\netcoreapp2.1\Yimi.PublishManage.CreateDomainUser.csproj.CoreCompileInputs.cache
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.CreateDomainUser\obj\Release\netcoreapp2.1\Yimi.PublishManage.CreateDomainUser.AssemblyInfoInputs.cache
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.CreateDomainUser\obj\Release\netcoreapp2.1\Yimi.PublishManage.CreateDomainUser.AssemblyInfo.cs
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.CreateDomainUser\obj\Release\netcoreapp2.1\Yimi.PublishManage.CreateDomainUser.dll
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.CreateDomainUser\obj\Release\netcoreapp2.1\Yimi.PublishManage.CreateDomainUser.pdb

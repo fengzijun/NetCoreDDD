@@ -1,0 +1,158 @@
+﻿@model List<Yimi.PublishManage.Service.Model.AdUser>
+@{
+    ViewData["Title"] = "SynUsers";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>钉钉用户同步</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="dt-buttons btn-group"><button id="synbtn" data-toggle="modal" data-target=".bs-example-modal-lg" class="btn btn-default buttons-copy buttons-html5 btn-sm" tabindex="0" aria-controls="datatable-buttons">钉钉用户同步</button></div>
+                <!-- start project list -->
+                <table class="table table-striped projects">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                            <tr>
+
+                                <td>
+                                    <a href="/user/resetuserpasword?username=@item.Username"> @item.Username</a>
+                                </td>
+                                <td>
+                                    @if (item.IsEnabled)
+                                    {
+                                        <a href="/user/DeleteDomainUser?username=@item.Username" class="btn btn-danger btn-xs delete"> Disable</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="/user/DeleteDomainUser?username=@item.Username" class="btn btn-success btn-xs delete"> Enabled</a>
+
+                                    }
+
+
+                                </td>
+
+                            </tr>
+                            }
+
+                        </tbody>
+                 </table>
+                <!-- end project list -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("Loading","正在同步...")
+
+
+@section Scripts{
+    <script>
+
+        var currentrunid = "";
+
+        $(function () {
+            $("#synbtn").click(function () { 
+                $("#modelmsg").html("");
+                 $.ajax({
+                    url: "/user/SysdingdingUsers" ,
+                    type: 'POST',
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.IsSuccess)
+                            window.location.reload();
+                        else {
+                            $("#modelmsg").html("<font color='red'>" + data.Message + "</font>");
+                        }
+                    }
+                    });
+               
+            })
+            //$(".run").each(function () {
+            //    $(this).click(function () {
+            //        $("#modelmsg").html("");
+            //        currentrunid = $(this).attr("modelid");
+
+            //    })
+
+            //})
+
+        //$(".confirm").click(function () {
+
+        //    var data = { id: currentrunid };
+
+        //    $.ajax({
+        //        url: "/SqlPublish/Run?id=" + currentrunid ,
+        //        type: 'POST',
+        //        dataType: 'json',
+        //        data: JSON.stringify(data),
+        //        contentType: 'application/json; charset=utf-8',
+        //        success: function (data) {
+        //            if (data.IsSuccess)
+        //                window.location.reload();
+        //            else {
+        //                $("#modelmsg").html("<font color='red'>" + data.Message + "</font>");
+        //            }
+        //        }
+        //    });
+        //})
+
+        //$(".submitaudit").each(function () {
+        //    $(this).click(function () {
+
+        //        var id = $(this).attr("modelid");
+        //        var data = { id: id };
+        //        $.ajax({
+        //            url: "/SqlPublish/updatestatues?id=" + id + "&statues=2",
+        //            type: 'POST',
+        //            dataType: 'json',
+        //            data: JSON.stringify(data),
+        //            contentType: 'application/json; charset=utf-8',
+        //            success: function (data) {
+        //                if (data.IsSuccess)
+        //                    window.location.reload();
+        //                else {
+
+        //                }
+        //            }
+        //        });
+        //    })
+
+
+        //})
+    })
+
+    </script>
+}

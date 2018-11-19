@@ -1,0 +1,11 @@
+﻿@inject Yimi.PublishManage.Core.IWorkContext _workContext
+
+<div class="profile clearfix">
+    <div class="profile_pic">
+        <img src="~/bower_components/gentelella/production/images/img.jpg" alt="..." class="img-circle profile_img">
+    </div>
+    <div class="profile_info">
+        <span>Welcome,</span>
+        <h2>@_workContext.CurrentUser.Name</h2>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.Console\bin\Debug\netcoreapp2.1\Yimi.PublishManage.Console.deps.json
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.Console\bin\Debug\netcoreapp2.1\Yimi.PublishManage.Console.runtimeconfig.json
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.Console\bin\Debug\netcoreapp2.1\Yimi.PublishManage.Console.runtimeconfig.dev.json
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.Console\bin\Debug\netcoreapp2.1\Yimi.PublishManage.Console.dll
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.Console\obj\Debug\netcoreapp2.1\Yimi.PublishManage.Console.csproj.CoreCompileInputs.cache
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.Console\obj\Debug\netcoreapp2.1\Yimi.PublishManage.Console.AssemblyInfoInputs.cache
+C:\Users\fengzijun\source\repos\Yimi.PublishMange\Yimi.PublishManage.Console\obj\Debug\netcoreapp2.1\Yimi.PublishManage.Console.AssemblyInfo.cs
