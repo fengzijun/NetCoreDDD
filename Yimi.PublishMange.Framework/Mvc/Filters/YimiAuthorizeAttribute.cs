@@ -50,7 +50,7 @@ namespace Yimi.PublishManage.Framework.Mvc.Filters
                     if (_workContext.CurrentUser == null)
                     {
                         //var changePasswordUrl = new UrlHelper(filterContext).RouteUrl("login");
-                        filterContext.Result = new RedirectToActionResult("login", "account", null); //new RedirectResult("http://localhost:50911/account/login");
+                        filterContext.Result = new RedirectToActionResult("login", "account", new { ReturnUrl =  filterContext.HttpContext.Request.Path.Value }); //new RedirectResult("http://localhost:50911/account/login");
                         
                     }
                 }

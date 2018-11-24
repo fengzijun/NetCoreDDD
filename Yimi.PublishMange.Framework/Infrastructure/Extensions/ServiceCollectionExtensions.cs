@@ -188,6 +188,7 @@ namespace Yimi.PublishManage.Framework.Infrastructure.Extensions
             {
                 options.DefaultScheme = YimiCookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultSignInScheme = YimiCookieAuthenticationDefaults.ExternalAuthenticationScheme;
+               
             });
 
             //add main cookie authentication

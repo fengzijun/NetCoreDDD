@@ -1,0 +1,15 @@
+/.vs
+/Yimi.PublishManage.ConsoleTest/bin
+/Yimi.PublishManage.ConsoleTest/obj
+/Yimi.PublishManage.ConsoleTest/bin/*
+/Yimi.PublishManage.ConsoleTest/obj/Debug
+/Yimi.PublishManage.ConsoleTest/obj/publish
+/Yimi.PublishManage.ConsoleTest/obj/Release
+/Yimi.PublishManage.ConsoleTest/obj/x86
+/Yimi.PublishManage.CreateDomainUser/bin
+/Yimi.PublishMange.Data/obj
+/Yimi.PublishMange.Data/bin
+/Yimi.PublishMange.Core/bin
+/Yimi.PublishMange.Core/obj
+/Yimi.PublishMange.Framework/bin
+/Yimi.PublishMange.Framework/obj

@@ -15,6 +15,10 @@ using Yimi.PublishManage.Web.Model;
 using Yimi.PublishManage.Service.IService;
 using Yimi.PublishManage.Core.Domain;
 using Microsoft.AspNetCore.Http;
+using System.Net.Mail;
+using System.Net;
+using Microsoft.AspNetCore.Authorization;
+using Yimi.PublishManage.Framework.Mvc.Filters;
 
 namespace Yimi.PublishManage.Web.Controllers
 {
@@ -36,6 +40,7 @@ namespace Yimi.PublishManage.Web.Controllers
 
         public IActionResult Index()
         {
+            //SendMail(new Quote { PartNo = "21312312", Phone="21312312", Company ="213213123", Commnet = "213123", Email ="123123213", Leadtime ="213213213", Quantity = "123123123", Name = "123123123", Type = "213123123123" });
             return View();
         }
 
@@ -204,13 +209,38 @@ namespace Yimi.PublishManage.Web.Controllers
             };
 
             _quoteService.AddQuote(domainmodel);
+            SendMail(domainmodel, filepath);
 
             return RedirectToAction("Success");
         }
 
+        private void SendMail(Quote quote,string filepath)
+        {
+            SmtpClient client = new SmtpClient("smtp.163.com",25);
+            client.UseDefaultCredentials = false;
+            client.Credentials = new NetworkCredential("15062334059@163.com", "Tuesday002");
 
+            MailMessage mailMessage = new MailMessage();
+            mailMessage.From = new MailAddress("15062334059@163.com");
+            mailMessage.To.Add("sales@starklink-xdz.com");
+            mailMessage.Body = quote.ToString();
+            mailMessage.Subject = $"New Quote from Company:{quote.Company},Phone:{quote.Phone},Parto:{quote.PartNo}";
+
+            if (System.IO.File.Exists(filepath))
+            {
+                Attachment attachment = new Attachment(filepath);
+                mailMessage.Attachments.Add(attachment);
+            }
+
+            client.Send(mailMessage);
+
+        }
+
+        [YimiAuthorize]
         public IActionResult ListQuote(int? pageindex , int? pagesize)
         {
+
+            
             var pageIndex = pageindex ?? 0;
             var pageSize = pagesize ?? 10;
             var result = _quoteService.GetQuotes(pageIndex, pageSize);

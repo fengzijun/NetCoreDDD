@@ -28,25 +28,25 @@ namespace Yimi.PublishManage.Web.Controllers
         
         public IActionResult Login()
         {
-            if(_workContext.CurrentUser!=null)
-                return RedirectToAction("Index", "Home");
-
+          
             return View();
         }
 
         [HttpPost]
-        public IActionResult Login(Yimi.PublishManage.Web.Model.LoginModel loginModel)
+        public IActionResult Login(Yimi.PublishManage.Web.Model.LoginModel loginModel,string returnurl)
         {
-            var model = _userService.GetUserByName(loginModel.Username);
-            if (model == null)
-                return View();
-
-            if (model.Password == loginModel.Password)
+            //var model = _userService.GetUserByName(loginModel.Username);
+            //if (model == null)
+            //    return View();
+           
+            if(loginModel.Username == "admin" && loginModel.Password == "123!@#")
             {
-                _yimiAuthenticationService.SignIn(model, true);
+                _yimiAuthenticationService.SignIn(new Core.Domain.User { Name = "admin" }, true);
+
+                if (!string.IsNullOrEmpty(returnurl))
+                    return Redirect(returnurl);
                 return RedirectToAction("Index", "Home");
             }
-               
             else
                 return View();
         }
